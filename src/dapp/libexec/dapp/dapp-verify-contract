@@ -124,8 +124,11 @@ params=(
 )
 
 source=$(hevm flatten --source-file "$file" --json-file "$DAPP_JSON" --dapp-root "$DAPP_ROOT")
+header=$(cat header.txt)
 
 source=$(cat <<.
+$header
+
 // Verified using https://dapp.tools
 
 $source
